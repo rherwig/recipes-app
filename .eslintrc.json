@@ -1,0 +1,5 @@
+{
+    "extends": [
+        "@hrwg/eslint-config/vue"
+    ]
+}
