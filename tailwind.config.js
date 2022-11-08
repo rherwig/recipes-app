@@ -1,15 +1,21 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        './src/**/*.{vue,ts}',
+        './src/**/*.{vue,ts,css}',
         './index.html',
     ],
     theme: {
         extend: {
             container: {
                 center: true,
+                padding: '1rem',
+            },
+            fontFamily: {
+                title: ['Expletus', 'sans-serif'],
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
 };

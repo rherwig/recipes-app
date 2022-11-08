@@ -13,16 +13,37 @@ export interface Recipe {
 
 export interface RecipesState {
     all: Recipe[];
+    counter: number;
 }
 
-export const useRecipes = defineStore('recipes', {
+export const useRecipesStore = defineStore('recipes', {
     state: (): RecipesState => ({
         all: [],
+        counter: 0,
     }),
+
+    persist: true,
+
+    getters: {
+        favorites: (state: RecipesState): Recipe[] => state.all.filter((recipe) => recipe.favorite),
+    },
 
     actions: {
         add(recipe: Recipe) {
-            this.all.push(recipe);
+            if (recipe.id === -1) {
+                recipe.id = this.counter;
+                this.all.push(recipe);
+                this.counter++;
+                return;
+            }
+
+            const index = this.all.findIndex((element) => element.id === recipe.id);
+            this.all[index] = recipe;
+        },
+
+        toggleFavorite(id: number) {
+            const index = this.all.findIndex((element) => element.id === id);
+            this.all[index].favorite = !this.all[index].favorite;
         },
 
         remove(id: number) {

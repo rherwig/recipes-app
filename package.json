@@ -37,6 +37,7 @@
     "homepage": "https://github.com/rherwig/recipes-app#readme",
     "devDependencies": {
         "@hrwg/eslint-config": "1.2.0",
+        "@tailwindcss/forms": "^0.5.3",
         "@types/node": "18.11.9",
         "@vitejs/plugin-vue": "^3.2.0",
         "autoprefixer": "^10.4.13",
@@ -51,6 +52,8 @@
     },
     "dependencies": {
         "pinia": "^2.0.23",
-        "vue": "^3.2.41"
+        "pinia-plugin-persistedstate": "^2.3.0",
+        "vue": "^3.2.41",
+        "vue-router": "^4.1.6"
     }
 }
