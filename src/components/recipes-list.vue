@@ -5,7 +5,7 @@
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
     >
         <RecipeCard
-            v-for="recipe in recipes.all"
+            v-for="recipe in recipes.filtered"
             :id="recipe.id"
             :key="recipe.id"
             :title="recipe.title"

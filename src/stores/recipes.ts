@@ -14,12 +14,14 @@ export interface Recipe {
 export interface RecipesState {
     all: Recipe[];
     counter: number;
+    showOnlyFavorites: boolean;
 }
 
 export const useRecipesStore = defineStore('recipes', {
     state: (): RecipesState => ({
         all: [],
         counter: 0,
+        showOnlyFavorites: false,
     }),
 
     persist: true,
@@ -27,6 +29,9 @@ export const useRecipesStore = defineStore('recipes', {
     getters: {
         byId: (state: RecipesState) => (id: number) => state.all.find((recipe) => recipe.id === id),
         favorites: (state: RecipesState): Recipe[] => state.all.filter((recipe) => recipe.favorite),
+        filtered(state: RecipesState): Recipe[] {
+            return state.showOnlyFavorites ? this.favorites : state.all;
+        },
     },
 
     actions: {

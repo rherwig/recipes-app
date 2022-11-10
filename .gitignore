@@ -58,5 +58,8 @@ keystone.db-journal
 # TypeScript
 tsconfig.tsbuildinfo
 
+# Workbox
+dev-dist/
+
 # Project
 lib/
