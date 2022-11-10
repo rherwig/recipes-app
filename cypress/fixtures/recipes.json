@@ -1,0 +1,19 @@
+[
+    {
+        "title": "American Cheesecake",
+        "description": "A true classic.",
+        "ingredient1": "Cheese",
+        "ingredient2": "Cake"
+    },
+    {
+        "title": "Ice Cold Lemonade",
+        "description": "Drink it and defeat relentless summer heat.",
+        "ingredient1": "Ice",
+        "ingredient2": "Lemonade",
+        "ingredient3": "A glass (optional)"
+    },
+    {
+        "title": "Air",
+        "description": "Just breathe."
+    }
+]

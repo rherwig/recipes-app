@@ -36,9 +36,8 @@ const id = parseInt(router.currentRoute.value.params.id as string, 10);
 const handleDelete = () => {
     if (recipes.all.find((recipe) => recipe.id === id)) {
         recipes.remove(id);
-        router.push('/');
-    } else {
-        console.warn('Tried to delete non-existing recipe!');
     }
+
+    router.push('/');
 };
 </script>

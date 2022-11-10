@@ -2,7 +2,6 @@
     <Button
         is-link
         to="/create"
-        class="inline-flex justify-center items-center bg-emerald-500 text-emerald-50 px-5 py-2 rounded-sm text-sm shadow-md transition-all hover:bg-emerald-600"
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"

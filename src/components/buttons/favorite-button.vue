@@ -1,5 +1,6 @@
 <template>
     <div @click.prevent="toggleFavorite">
+        <!-- TODO: Animate the heart -->
         <div v-if="props.favorite">
             <HeartFilled />
         </div>

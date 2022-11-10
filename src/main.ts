@@ -1,17 +1,18 @@
 import { createApp } from 'vue';
-import { createPinia } from 'pinia';
-import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+import { createHead } from '@vueuse/head';
 
 import '~/main.css';
-import App from '~/components/app.vue';
+
+import App from '~/app.vue';
 import router from '~/router';
+import createPinia from '~/stores';
 
 const app = createApp(App);
+const head = createHead();
 const pinia = createPinia();
 
-pinia.use(piniaPluginPersistedstate);
-
 app.use(router);
+app.use(head);
 app.use(pinia);
 
 app.mount('#vue-root');

@@ -3,12 +3,12 @@ import { defineStore } from 'pinia';
 export interface Recipe {
     id: number;
     title: string;
-    ingredient1: string;
+    ingredient1?: string;
     ingredient2?: string;
     ingredient3?: string;
     description?: string;
     favorite?: boolean;
-    createdAt: Date;
+    createdAt?: Date;
 }
 
 export interface RecipesState {
@@ -25,12 +25,13 @@ export const useRecipesStore = defineStore('recipes', {
     persist: true,
 
     getters: {
+        byId: (state: RecipesState) => (id: number) => state.all.find((recipe) => recipe.id === id),
         favorites: (state: RecipesState): Recipe[] => state.all.filter((recipe) => recipe.favorite),
     },
 
     actions: {
-        add(recipe: Recipe) {
-            if (recipe.id === -1) {
+        upsert(recipe: Partial<Recipe>) {
+            if (typeof recipe.id === 'undefined' || recipe.id === null) {
                 recipe.id = this.counter;
                 this.all.push(recipe);
                 this.counter++;

@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import FavoriteButton from '~/components/favorite-button.vue';
+import FavoriteButton from '~/components/buttons/favorite-button.vue';
 
 interface Props {
     id: number;

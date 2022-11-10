@@ -4,6 +4,16 @@ module.exports = {
         './src/**/*.{vue,ts,css}',
         './index.html',
     ],
+
+    safelist: [
+        'list-move',
+        'list-enter-active',
+        'list-leave-active',
+        'list-enter-from,',
+        'list-leave-to',
+        'list-leave-active',
+    ],
+
     theme: {
         extend: {
             container: {
@@ -12,6 +22,13 @@ module.exports = {
             },
             fontFamily: {
                 title: ['Expletus', 'sans-serif'],
+            },
+            screens: {
+                sm: '640px',
+                md: '768px',
+                lg: '1024px',
+                xl: '1024px',
+                '2xl': '1024px',
             },
         },
     },
